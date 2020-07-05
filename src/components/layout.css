@@ -620,3 +620,24 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+ul {
+  margin: 0;
+}
+.answerContainer {
+  padding: 0.5em 0 0.2em;
+
+  border-bottom: 3px solid transparent;
+}
+.answerContainer.error {
+  border-color: orange;
+}
+.answerContainer.error.isSelected {
+  border-color: red;
+}
+.answerContainer.correct.isSelected {
+  border-color: green;
+}
+.answerContainer.correct {
+  border-color: transparent;
+}

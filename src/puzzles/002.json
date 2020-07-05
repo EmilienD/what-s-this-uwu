@@ -1,0 +1,16 @@
+{
+  "question": "function Foo() {};\nFoo.prototype.bar = function() { whats(this) };\nconst foo = new Foo();\nfoo.bar();",
+  "answers": [
+    {
+      "value": "global",
+      "displayName": "global object"
+    },
+    {
+      "value": "undefined"
+    },
+    {
+      "value": "foo",
+      "isCorrect": true
+    }
+  ]
+}

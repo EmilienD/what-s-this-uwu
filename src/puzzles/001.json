@@ -1,0 +1,16 @@
+{
+  "question": "(function() { whats(this) })()",
+  "answers": [
+    {
+      "value": "global",
+      "displayName": "global object",
+      "isCorrect": true
+    },
+    {
+      "value": "undefined"
+    },
+    {
+      "value": "null"
+    }
+  ]
+}
