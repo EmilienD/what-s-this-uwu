@@ -38,7 +38,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "test:puzzles": "for PUZZLE in $(ls src/puzzles); do node src/test.js src/puzzles/$PUZZLE; done"
   },
   "repository": {
     "type": "git",
