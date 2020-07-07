@@ -1,6 +1,6 @@
 {
   "name": "what-s-this-uwu",
-  "description": "Every object-oriented Javascript developper's favourite game, guessing what \"this\" is in the current context.",
+  "description": "Every object-oriented Javascript developer's favourite game, guessing what \"this\" is in the current context.",
   "version": "0.1.0",
   "author": "Emilien Durieu <contact@emilienduri.eu>",
   "dependencies": {

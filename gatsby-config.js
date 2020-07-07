@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `What's this? UωU`,
-    description: `Every object-oriented Javascript developper's favourite game, guessing what "this" is in the current context.`,
+    description: `Every object-oriented Javascript developer's favourite game, guessing what "this" is in the current context.`,
     author: `@EmilienDurieu`,
   },
   plugins: [
