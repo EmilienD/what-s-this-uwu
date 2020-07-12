@@ -630,13 +630,13 @@ ul {
   border-bottom: 3px solid transparent;
 }
 .answerContainer.error {
-  border-color: orange;
+  border-color: lightskyblue;
 }
 .answerContainer.error.isSelected {
   border-color: red;
 }
 .answerContainer.correct.isSelected {
-  border-color: green;
+  border-color: limegreen;
 }
 .answerContainer.correct {
   border-color: transparent;

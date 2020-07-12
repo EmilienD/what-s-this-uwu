@@ -1,0 +1,20 @@
+{
+  "question": "function Foo() {\n  const that = this\n  whats(this)\n}\n\nFoo()",
+  "answers": [
+    {
+      "value": "global",
+      "displayName": "global object",
+      "isCorrect": true
+    },
+    {
+      "value": "undefined"
+    },
+    {
+      "value": "null"
+    },
+    {
+      "value": "that",
+      "isCorrect": true
+    }
+  ]
+}
