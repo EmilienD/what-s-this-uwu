@@ -60,7 +60,7 @@ const IndexPage = ({ data, location }) => {
               />
               {showResult ? (
                 <Link
-                  class="button main"
+                  className="button main"
                   type="button"
                   to={`?puzzle=${
                     puzzles[(currentPuzzleIndex + 1) % puzzles.length].parent
@@ -70,7 +70,7 @@ const IndexPage = ({ data, location }) => {
                   Another one
                 </Link>
               ) : (
-                <button class="button main" type="submit">
+                <button className="button main" type="submit">
                   Validate me senpaï
                 </button>
               )}

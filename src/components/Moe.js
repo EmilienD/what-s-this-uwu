@@ -12,7 +12,7 @@ const MoeTop = ({ blushing, embarrassed }) => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 196.85 176.212"
-    style={{ display: "block", width: "368px", margin: "0 auto" }}
+    style={{ display: "block", width: "40%", margin: "0 auto" }}
   >
     <defs>
       <radialGradient
@@ -247,9 +247,9 @@ const Moe = ({ answered, answeredCorrectly, children }) => {
           src={rightHand}
           style={{
             position: "absolute",
-            left: "-17px",
+            left: "-1.8%",
             top: 20,
-            height: "80px",
+            width: "7%",
           }}
         />
         {children}
@@ -258,9 +258,9 @@ const Moe = ({ answered, answeredCorrectly, children }) => {
           style={{
             transform: "scaleX(-1)",
             position: "absolute",
-            right: "-17px",
+            right: "-1.8%",
             top: 20,
-            height: "80px",
+            width: "7%",
           }}
         />
       </div>
