@@ -30,3 +30,5 @@ At least one answer should be correct.
 Run `npm run test:puzzles` to make sure your puzzle is correct before making your pull request.
 
 Other types of contributions are also welcome.
+
+Original moe image by <a href="https://pixabay.com/users/akane-k-8075952/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3793863">Akane-K</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3793863">Pixabay</a>

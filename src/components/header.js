@@ -14,13 +14,14 @@ const Header = ({ siteTitle }) => (
         margin: `0 auto`,
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
+        color: `hsla(0, 0%, 0%, 0.8)`,
       }}
     >
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
           style={{
-            color: `#000`,
+            color: `hsla(0, 0%, 0%, 0.8)`,
             textDecoration: `none`,
           }}
         >

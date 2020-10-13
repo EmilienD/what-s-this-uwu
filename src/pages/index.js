@@ -43,10 +43,10 @@ const IndexPage = ({ data, location }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Question question={currentPuzzle.question} />
       <Form onSubmit={() => {}}>
-        {({ errors }) =>
-          console.log(errors) || (
+        {({ errors }) => (
+          <>
+            <Question question={currentPuzzle.question} />
             <form
               onSubmit={e => {
                 e.preventDefault()
@@ -58,30 +58,26 @@ const IndexPage = ({ data, location }) => {
                 showResult={showResult}
                 puzzle={puzzle}
               />
-              <button type="submit">Validate me senpaï</button>
+              {showResult ? (
+                <Link
+                  class="button main"
+                  type="button"
+                  to={`?puzzle=${
+                    puzzles[(currentPuzzleIndex + 1) % puzzles.length].parent
+                      .name
+                  }`}
+                >
+                  Another one
+                </Link>
+              ) : (
+                <button class="button main" type="submit">
+                  Validate me senpaï
+                </button>
+              )}
             </form>
-          )
-        }
+          </>
+        )}
       </Form>
-      <Link
-        to={`?puzzle=${
-          puzzles[
-            currentPuzzleIndex === 0
-              ? puzzles.length - 1
-              : currentPuzzleIndex - 1
-          ].parent.name
-        }`}
-      >
-        Previous
-      </Link>
-      <Link
-        to={`?puzzle=${
-          puzzles[(currentPuzzleIndex + 1) % puzzles.length].parent.name
-        }`}
-      >
-        {" "}
-        Next
-      </Link>
       <p>
         Something wrong with this puzzle? Create an issue on{" "}
         <a

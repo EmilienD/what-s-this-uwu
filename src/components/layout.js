@@ -31,10 +31,12 @@ const Layout = ({ children }) => {
           margin: `0 auto`,
           maxWidth: 960,
           padding: `0 1.0875rem 1.45rem`,
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <main>{children}</main>
-        <footer>
+        <footer style={{}}>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
