@@ -1,7 +1,6 @@
 import React from "react"
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter"
 import js from "react-syntax-highlighter/dist/esm/languages/hljs/javascript"
-import { tomorrowNightEighties } from "react-syntax-highlighter/dist/esm/styles/hljs"
 import moeHead from "../images/moe-head.png"
 import rightHand from "../images/right-hand.png"
 
@@ -235,13 +234,10 @@ const MoeTop = ({ blushing, embarrassed }) => (
   </svg>
 )
 
-const Moe = ({ answered, answeredCorrectly, children }) => {
+const Moe = ({ blushing, embarrassed, children }) => {
   return (
     <>
-      <MoeTop
-        blushing={answered && answeredCorrectly}
-        embarrassed={answered && !answeredCorrectly}
-      />
+      <MoeTop blushing={blushing} embarrassed={embarrassed} />
       <div style={{ position: "relative" }}>
         <img
           src={rightHand}
