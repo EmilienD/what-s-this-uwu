@@ -1,15 +1,11 @@
-import React, { useEffect } from "react"
+import React from "react"
 import classNames from "classnames"
-import { Field, useForm } from "react-final-form"
+import { Field } from "react-final-form"
 
-const Answers = ({ possibleAnswers, showResult }) => {
-  const form = useForm()
-  useEffect(() => {
-    form.reset({})
-  }, [possibleAnswers])
+const Answers = ({ possibleAnswers, showResult, puzzleId }) => {
   return (
     <ul style={{ listStyleType: "none", fontFamily: "sans-serif" }}>
-      {possibleAnswers.map((answer, i) => (
+      {possibleAnswers.map(answer => (
         <Field
           type="checkbox"
           name={answer.value}
@@ -20,7 +16,7 @@ const Answers = ({ possibleAnswers, showResult }) => {
                 : "shouldNotHaveBeenSelected"
             }
           }}
-          key={answer.value}
+          key={`${puzzleId}_${answer.value}`}
         >
           {({ input, meta }) => (
             <li
@@ -33,15 +29,18 @@ const Answers = ({ possibleAnswers, showResult }) => {
                 }
               )}
             >
-              <label htmlFor={`answerInput${i}`} id={`answerLabel${i}`}>
+              <label
+                htmlFor={`${puzzleId}_${answer.value}`}
+                id={`answerLabel_${puzzleId}_${answer.value}`}
+              >
                 <input
                   disabled={showResult}
                   onChange={input.onChange}
+                  type="checkbox"
                   checked={input.checked}
-                  type={input.type}
-                  id={`answerInput${i}`}
+                  id={`${puzzleId}_${answer.value}`}
                 />{" "}
-                {answer.displayName || answer.value}
+                <span>{answer.displayName || answer.value}</span>
               </label>
             </li>
           )}

@@ -1,7 +1,10 @@
 import React from "react"
 
 const Score = ({ answers, questions }) => {
-  const score = Object.keys(answers).reduce((acc, key) => answers[key] + acc, 0)
+  const score = Object.keys(answers).reduce(
+    (acc, key) => answers[key].score + acc,
+    0
+  )
   const max = questions.length
   return (
     <div style={{ height: 0 }}>

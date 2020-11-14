@@ -1,14 +1,24 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { parse } from "query-string"
 import { Form } from "react-final-form"
 import { useLocation } from "@reach/router"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { graphql, Link } from "gatsby"
-import Answers from "../components/Answers"
-import Question from "../components/Question"
-import Score from "../components/Score"
+import { graphql } from "gatsby"
+import Game from "../components/Game"
+
+const useStoredAnswers = () => {
+  const storedAnswers = JSON.parse(localStorage.getItem("answers")) || {}
+  const [answers, setAnswers] = useState(storedAnswers)
+
+  const storeAnswers = answers => {
+    localStorage.setItem("answers", JSON.stringify(answers))
+    setAnswers(answers)
+  }
+
+  return [answers, storeAnswers]
+}
 
 export const query = graphql`
   query GetPuzzles {
@@ -32,66 +42,37 @@ export const query = graphql`
   }
 `
 const IndexPage = ({ data }) => {
-  const { puzzle = "001" } = parse(useLocation().search)
+  const puzzleId = parse(useLocation().search).puzzle || "001"
   const puzzles = data.allPuzzlesJson.nodes
-  const currentPuzzleIndex = puzzles.findIndex(
-    node => node.parent.name === puzzle
-  )
-  const currentPuzzle = puzzles[currentPuzzleIndex]
-  const [showResult, setShowResult] = useState(false)
-  const [answers, setAnswers] = useState({})
-  const possibleAnswers = currentPuzzle.answers
-  useEffect(() => {
-    setShowResult(false)
-  }, [puzzle])
+
+  const [storedAnswers, storeAnswers] = useStoredAnswers()
+  const [showResult, setShowResult] = useState(!!storedAnswers[puzzleId])
+
+  const currentPuzzle = puzzles.find(node => node.parent.name === puzzleId)
+
   return (
     <Layout>
       <SEO title="Home" />
-      <Form onSubmit={() => {}}>
-        {({ errors }) => {
-          const answeredCorrectly = Object.keys(errors).length === 0
-          return (
-            <>
-              <Question
-                question={currentPuzzle.question}
-                answered={showResult}
-                answeredCorrectly={answeredCorrectly}
-              />
-              <Score answers={answers} questions={puzzles} />
-              <form
-                onSubmit={e => {
-                  e.preventDefault()
-                  setAnswers({
-                    ...answers,
-                    [puzzle]: answeredCorrectly ? 1 : -1,
-                  })
-                  setShowResult(true)
-                }}
-              >
-                <Answers
-                  possibleAnswers={possibleAnswers}
-                  showResult={showResult}
-                  puzzle={puzzle}
-                />
-                {showResult ? (
-                  <Link
-                    className="button main"
-                    to={`?puzzle=${
-                      puzzles[(currentPuzzleIndex + 1) % puzzles.length].parent
-                        .name
-                    }`}
-                  >
-                    Another one
-                  </Link>
-                ) : (
-                  <button className="button main" type="submit">
-                    Validate me senpaï
-                  </button>
-                )}
-              </form>
-            </>
-          )
-        }}
+      <Form
+        onSubmit={() => {}}
+        validate={values =>
+          Object.keys(values).find(key => values[key])
+            ? undefined
+            : {
+                noSelectionYet: true,
+              }
+        }
+      >
+        {() => (
+          <Game
+            puzzles={puzzles}
+            puzzleId={puzzleId}
+            showResult={showResult}
+            setShowResult={setShowResult}
+            storedAnswers={storedAnswers}
+            storeAnswers={storeAnswers}
+          />
+        )}
       </Form>
       <p>
         Something wrong with this puzzle? Create an issue on{" "}
