@@ -247,6 +247,7 @@ const Moe = ({ blushing, embarrassed, children }) => {
             top: 20,
             width: "7%",
           }}
+          alt="Moe's right hand"
         />
         {children}
         <img
@@ -258,6 +259,7 @@ const Moe = ({ blushing, embarrassed, children }) => {
             top: 20,
             width: "7%",
           }}
+          alt="Moe's left hand"
         />
       </div>
     </>
