@@ -7,13 +7,17 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Game from "../components/Game"
-
+const localStorageAvailable = typeof window !== "undefined" && window
 const useStoredAnswers = () => {
-  const storedAnswers = JSON.parse(localStorage.getItem("answers")) || {}
+  const storedAnswers = localStorageAvailable
+    ? JSON.parse(localStorage.getItem("answers")) || {}
+    : {}
   const [answers, setAnswers] = useState(storedAnswers)
 
   const storeAnswers = answers => {
-    localStorage.setItem("answers", JSON.stringify(answers))
+    if (localStorageAvailable) {
+      localStorage.setItem("answers", JSON.stringify(answers))
+    }
     setAnswers(answers)
   }
 
