@@ -47,5 +47,8 @@
   },
   "bugs": {
     "url": "https://github.com/EmilienD/what-s-this-uwu/issues"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }
