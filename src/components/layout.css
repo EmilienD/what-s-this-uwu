@@ -639,16 +639,17 @@ ul {
 }
 .answerContainer {
   padding: 0.5em 0 0.2em;
-
+}
+.answerContainer input + span {
   border-bottom: 3px solid transparent;
 }
-.answerContainer.error {
+.answerContainer.error input + span {
   border-color: lightskyblue;
 }
-.answerContainer.error.isSelected {
+.answerContainer.error.isSelected input + span {
   border-color: red;
 }
-.answerContainer.correct.isSelected {
+.answerContainer.correct.isSelected input + span {
   border-color: limegreen;
 }
 .answerContainer.correct {
@@ -666,9 +667,12 @@ ul {
   text-decoration: none;
   display: inline-block;
 }
-.button.main:active {
+.button.main:active:not(:disabled) {
   color: var(--black);
   background: var(--yellow);
   border: 2px solid var(--yellow);
   transform: scale(0.98);
+}
+.button.main:disabled {
+  opacity: 0.5;
 }
