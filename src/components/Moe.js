@@ -1,8 +1,8 @@
 import React from "react"
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter"
 import js from "react-syntax-highlighter/dist/esm/languages/hljs/javascript"
-import moeHead from "../images/moe-head.png"
-import rightHand from "../images/right-hand.png"
+import moeHead from "../media/moe-head.png"
+import rightHand from "../media/right-hand.png"
 
 SyntaxHighlighter.registerLanguage("javascript", js)
 
