@@ -50,50 +50,24 @@ const MoeTop = ({ blushing, embarrassed }) => (
         preserveAspectRatio="none"
         href={moeHead}
       ></image>
+      <g>
       <path
-        opacity={embarrassed || blushing ? 1 : 0}
+        opacity={Number(blushing)}
         fill="#fbd8d0"
         d="M338.31 314.809c-7.596.312-16.505-4.047-19.46-5.906-3.502-2.203-6.685-3.061-9.384-6.197-1.666-1.935-3.128-5.02-3.92-7.447-2.658-8.136-5.525-23.493-5.773-25.019-.248-1.525-1.51-14.518-1.51-14.518 5.188-4.503 9.718-9.335 13.547-14.519l-5.813 8.696c10.993-8.502 18.565-18.116 24.167-28.371 5.624 11.792 13.858 22.69 24.136 32.967-8.754-9.793-16.854-19.741-19.723-30.929l35.314 28.74 9.89 7.552c-.026-.255-1.016 22.932-8.96 40.071-1.375 2.969-6.058 6.103-9.008 7.596-8.853 4.482-15.238 6.945-23.504 7.284z"
-      ></path>
+        ></path>
+        </g>
+      <g>
+      <path
+        opacity={Number(embarrassed)}
+        fill="#fbd8d0"
+        d="M338.31 314.809c-7.596.312-16.505-4.047-19.46-5.906-3.502-2.203-6.685-3.061-9.384-6.197-1.666-1.935-3.128-5.02-3.92-7.447-2.658-8.136-5.525-23.493-5.773-25.019-.248-1.525-1.51-14.518-1.51-14.518 5.188-4.503 9.718-9.335 13.547-14.519l-5.813 8.696c10.993-8.502 18.565-18.116 24.167-28.371 5.624 11.792 13.858 22.69 24.136 32.967-8.754-9.793-16.854-19.741-19.723-30.929l35.314 28.74 9.89 7.552c-.026-.255-1.016 22.932-8.96 40.071-1.375 2.969-6.058 6.103-9.008 7.596-8.853 4.482-15.238 6.945-23.504 7.284z"
+        ></path>
+        </g>
       <g className="prefix__face-1" opacity={blushing ? 1 : 0}>
         <path
-          style={{
-            lineHeight: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantPosition: "normal",
-            fontVariantCaps: "normal",
-            fontVariantNumeric: "normal",
-            fontVariantAlternates: "normal",
-            fontVariantEastAsian: "normal",
-            fontFeatureSettings: "normal",
-            fontVariationSettings: "normal",
-            WebkitTextIndent: "0",
-            textIndent: "0",
-            WebkitTextAlign: "start",
-            textAlign: "start",
-            WebkitTextDecorationLine: "none",
-            textDecorationLine: "none",
-            WebkitTextDecorationStyle: "solid",
-            textDecorationStyle: "solid",
-            WebkitTextDecorationColor: "#000",
-            textDecorationColor: "#000",
-            WebkitTextTransform: "none",
-            textTransform: "none",
-            WebkitTextOrientation: "mixed",
-            textOrientation: "mixed",
-            whiteSpace: "normal",
-            shapePadding: "0",
-            shapeMargin: "0",
-            inlineSize: "0",
-            isolation: "auto",
-            mixBlendMode: "normal",
-            solidColor: "#000",
-            solidOpacity: "1",
-          }}
           d="M347.622 269.83c-.03-.004.156-.011-.093.004-.249.016-1.117-.483-1.396.09-.278.575 1.33 1.835 1.778 3.017.45 1.183.367 2.53-.2 3.435-.566.905-.132.264-.599.8-.466.535-1.832 1.48-2.929 1.545-1.096.066-1.922-.247-2.836-1.105-.915-.858-1.68-2.327-2.074-3.796-.393-1.468-.359-2.277-.663-3.35-.304-1.074-1.568-.62-1.987-.02-.418.6-.092 1.523-.374 2.93-.282 1.408-.619 2.222-1.185 3.127-.567.905-.133.264-.6.8-.466.535-1.832 1.48-2.929 1.545-1.096.065-2.198.126-3.113-.732-.914-.858-1.556-1.674-1.95-3.143-.393-1.469.966-4.584.987-5.465.021-.88.024-.088-.284-.097-.308-.01-1.216-1.175-1.534.015-.318 1.19-1.32 4.795-.774 6.55.546 1.754 1.314 2.624 2.558 3.682 1.243 1.058 3.015 1.16 4.545.978 1.529-.183 2.976-1.103 3.906-2.182.93-1.079 1.846-3.476 1.846-3.476s1.405 3.136 2.627 4.176c1.222 1.04 2.74 1.534 4.269 1.351 1.529-.183 2.78-.874 3.906-2.182 1.127-1.308 1.272-2.523 1.512-4.082.241-1.559-1.018-2.942-1.416-3.622-.397-.679-.476-.474-.614-.532-.139-.058-.354-.26-.384-.262zm-27.646-19.15c-.263.043-.46.243-.704.338l-1.05.542c.745 1.416 1.459 2.89 1.675 4.493.268 1.717-.098 3.568-1.183 4.949-1.52 1.976-4.115 3.003-6.577 2.774-1.469-.134-2.928-.807-3.83-2-.96-1.258-1.268-2.888-1.224-4.44.039-1.576.386-3.1.864-4.598l.381-1.183-2.255-.747c-.759 2.195-1.386 4.479-1.373 6.82-.005 2.01.513 4.085 1.783 5.679 1.333 1.706 3.447 2.702 5.588 2.851 3.269.263 6.666-1.179 8.63-3.83 1.232-1.663 1.794-3.783 1.632-5.84-.124-1.869-.776-3.66-1.63-5.312-.105-.302-.394-.55-.727-.495zm45.934-1.125c-.263.041-.459.242-.703.337l-1.05.542c.745 1.416 1.459 2.89 1.675 4.493.268 1.716-.098 3.568-1.184 4.949-1.52 1.976-4.114 3.003-6.576 2.774-1.47-.134-2.928-.807-3.83-2-.96-1.258-1.269-2.889-1.224-4.44.039-1.576.386-3.1.864-4.598l.38-1.183-2.255-.747c-.758 2.195-1.385 4.479-1.373 6.819-.005 2.01.514 4.086 1.783 5.68 1.333 1.706 3.447 2.702 5.588 2.851 3.27.262 6.667-1.18 8.63-3.83 1.232-1.664 1.794-3.783 1.632-5.84-.123-1.869-.775-3.661-1.63-5.312-.104-.302-.393-.55-.727-.495z"
           color="#000"
-          fontFamily="sans-serif"
-          fontWeight="400"
           overflow="visible"
         ></path>
         <path
@@ -107,39 +81,6 @@ const MoeTop = ({ blushing, embarrassed }) => (
       </g>
       <g className="prefix__face-2" opacity={embarrassed ? 1 : 0}>
         <path
-          style={{
-            lineHeight: "normal",
-            fontVariantLigatures: "normal",
-            fontVariantPosition: "normal",
-            fontVariantCaps: "normal",
-            fontVariantNumeric: "normal",
-            fontVariantAlternates: "normal",
-            fontVariantEastAsian: "normal",
-            fontFeatureSettings: "normal",
-            fontVariationSettings: "normal",
-            WebkitTextIndent: "0",
-            textIndent: "0",
-            WebkitTextAlign: "start",
-            textAlign: "start",
-            WebkitTextDecorationLine: "none",
-            textDecorationLine: "none",
-            WebkitTextDecorationStyle: "solid",
-            textDecorationStyle: "solid",
-            WebkitTextDecorationColor: "#000",
-            textDecorationColor: "#000",
-            WebkitTextTransform: "none",
-            textTransform: "none",
-            WebkitTextOrientation: "mixed",
-            textOrientation: "mixed",
-            whiteSpace: "normal",
-            shapePadding: "0",
-            shapeMargin: "0",
-            inlineSize: "0",
-            isolation: "auto",
-            mixBlendMode: "normal",
-            solidColor: "#000",
-            solidOpacity: "1",
-          }}
           d="M303.16 276.034l-.034 2.91 22.024.265.047-3.44-22.03-.264-.007.529zm46.218.014c-.01.97-.022 1.94-.034 2.91l22.025.265.047-3.44c-7.344-.087-14.688-.177-22.031-.265l-.007.53z"
           color="#000"
           fontFamily="sans-serif"
@@ -154,77 +95,11 @@ const MoeTop = ({ blushing, embarrassed }) => (
         ></path>
         <g color="#000" fontFamily="sans-serif" fontWeight="400">
           <path
-            style={{
-              lineHeight: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantPosition: "normal",
-              fontVariantCaps: "normal",
-              fontVariantNumeric: "normal",
-              fontVariantAlternates: "normal",
-              fontVariantEastAsian: "normal",
-              fontFeatureSettings: "normal",
-              fontVariationSettings: "normal",
-              WebkitTextIndent: "0",
-              textIndent: "0",
-              WebkitTextAlign: "start",
-              textAlign: "start",
-              WebkitTextDecorationLine: "none",
-              textDecorationLine: "none",
-              WebkitTextDecorationStyle: "solid",
-              textDecorationStyle: "solid",
-              WebkitTextDecorationColor: "#000",
-              textDecorationColor: "#000",
-              WebkitTextTransform: "none",
-              textTransform: "none",
-              WebkitTextOrientation: "mixed",
-              textOrientation: "mixed",
-              whiteSpace: "normal",
-              shapePadding: "0",
-              shapeMargin: "0",
-              inlineSize: "0",
-              isolation: "auto",
-              mixBlendMode: "normal",
-              solidColor: "#000",
-              solidOpacity: "1",
-            }}
             fill="#80e5ff"
             d="M333.05 304.712l8.029 1.43"
             overflow="visible"
           ></path>
           <path
-            style={{
-              lineHeight: "normal",
-              fontVariantLigatures: "normal",
-              fontVariantPosition: "normal",
-              fontVariantCaps: "normal",
-              fontVariantNumeric: "normal",
-              fontVariantAlternates: "normal",
-              fontVariantEastAsian: "normal",
-              fontFeatureSettings: "normal",
-              fontVariationSettings: "normal",
-              WebkitTextIndent: "0",
-              textIndent: "0",
-              WebkitTextAlign: "start",
-              textAlign: "start",
-              WebkitTextDecorationLine: "none",
-              textDecorationLine: "none",
-              WebkitTextDecorationStyle: "solid",
-              textDecorationStyle: "solid",
-              WebkitTextDecorationColor: "#000",
-              textDecorationColor: "#000",
-              WebkitTextTransform: "none",
-              textTransform: "none",
-              WebkitTextOrientation: "mixed",
-              textOrientation: "mixed",
-              whiteSpace: "normal",
-              shapePadding: "0",
-              shapeMargin: "0",
-              inlineSize: "0",
-              isolation: "auto",
-              mixBlendMode: "normal",
-              solidColor: "#000",
-              solidOpacity: "1",
-            }}
             d="M333.039 303.22a1.493 1.493 0 00-1.459 1.23 1.493 1.493 0 001.208 1.731l8.03 1.43a1.493 1.493 0 001.73-1.208 1.493 1.493 0 00-1.208-1.73l-8.028-1.43a1.493 1.493 0 00-.273-.024z"
             overflow="visible"
           ></path>
