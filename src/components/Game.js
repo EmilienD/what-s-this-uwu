@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 import Answers from "../components/Answers"
 import Question from "../components/Question"
 import Score from "../components/Score"
+import anotherOne from "../media/AnotherShortOne.mp3"
 
 const Game = ({
   showResult,
@@ -56,7 +57,10 @@ const Game = ({
           puzzleId={puzzleId}
         />
         {showResult ? (
-          <Link className="button main" to={`?puzzle=${nextPuzzleId}`}>
+          <Link className="button main" to={`?puzzle=${nextPuzzleId}`} onPointerDown={() => {
+            const sample = new Audio(anotherOne)
+            sample.play()
+          }}>
             Another one
           </Link>
         ) : (
