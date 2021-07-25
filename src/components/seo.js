@@ -12,6 +12,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import moeHead from "../media/moe-head.png"
 
+const origin = process.env.GATSBY_ORIGIN
+
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
@@ -52,10 +54,14 @@ function SEO({ description, lang, meta, title }) {
           property: `og:type`,
           content: `website`,
         },
+        { property: `og:image`, content: `${origin}${moeHead}` },
+        { property: `og:image:width`, content: 744 },
+        { property: `og:image:height`, content: 666 },
         {
           name: `twitter:card`,
           content: `summary`,
         },
+        { name: `twitter:site:id`, content: `@EmilienDurieu` },
         {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
