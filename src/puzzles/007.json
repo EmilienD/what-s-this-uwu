@@ -1,0 +1,16 @@
+{
+  "question": "'use strict';\n(function() { whats(this) })()",
+  "answers": [
+    {
+      "value": "global",
+      "displayName": "global object"
+    },
+    {
+      "value": "undefined",
+      "isCorrect": true
+    },
+    {
+      "value": "null"
+    }
+  ]
+}

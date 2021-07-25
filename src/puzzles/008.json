@@ -1,0 +1,19 @@
+{
+  "question": "class Bar {\n  foo() {\n    (function(){whats(this)})()\n  }\n}\nconst instance = new Bar()\ninstance.foo()",
+  "answers": [
+    {
+      "value": "global",
+      "displayName": "global object"
+    },
+    {
+      "value": "undefined",
+      "isCorrect": true
+    },
+    {
+      "value": "null"
+    },
+    {
+      "value": "instance"
+    }
+  ]
+}

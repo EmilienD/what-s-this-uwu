@@ -1,0 +1,19 @@
+{
+  "question": "class Bar {\n  foo() {\n    whats(this)\n  }\n}\n\nfunction hof (cb){\n  cb()\n}\n\nconst instance = new Bar()\n\nhof(instance.foo)",
+  "answers": [
+    {
+      "value": "global",
+      "displayName": "global object"
+    },
+    {
+      "value": "undefined",
+      "isCorrect": true
+    },
+    {
+      "value": "Bar"
+    },
+    {
+      "value": "instance"
+    }
+  ]
+}
