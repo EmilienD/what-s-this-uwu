@@ -55,6 +55,7 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         { property: `og:image`, content: `${origin}${moeHead}` },
+        { property: `og:url`, content: origin },
         { property: `og:image:width`, content: 744 },
         { property: `og:image:height`, content: 666 },
         {
