@@ -56,7 +56,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="What's this? UωU - The Javascript game" />
       <Form
         onSubmit={() => {}}
         validate={values =>

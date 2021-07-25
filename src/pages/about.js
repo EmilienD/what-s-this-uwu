@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 const About = () => {
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO title="What's this? UωU - About" />
       <ul style={{ listStyleType: "none" }} className="about-list">
         <li>
           <details>
