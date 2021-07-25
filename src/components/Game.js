@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useForm, useFormState } from "react-final-form"
 import { Link } from "gatsby"
 
@@ -17,6 +17,7 @@ const Game = ({
 }) => {
   const form = useForm()
   const { errors, values } = useFormState()
+  const [showHelp, setShowHelp] = useState(false)
   const answeredCorrectly = Object.keys(errors).length === 0
 
   const currentPuzzleIndex = puzzles.findIndex(
@@ -71,6 +72,27 @@ const Game = ({
           >
             Validate me senpaï
           </button>
+        )}
+        <button
+          className="help-button"
+          onClick={() => {
+            setShowHelp(!showHelp)
+          }}
+          type="button"
+        >
+          How do I play this game?
+        </button>
+        {showHelp && (
+          <p>
+            <br />
+            The anime girl is showing you a short program. Guess the value of{" "}
+            <code>this</code> when passed to the <code>whats</code> function at
+            execution time. There's at least one correct answer, selecting all
+            the corrects answers gets you one point. Validation is shown as{" "}
+            <span className="help help-error">Wrong answer</span>,{" "}
+            <span className="help help-correct">Correct answer</span> and{" "}
+            <span className="help help-missed">Missed answer</span>
+          </p>
         )}
       </form>
     </>
