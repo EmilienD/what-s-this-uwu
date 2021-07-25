@@ -79,15 +79,13 @@ const IndexPage = ({ data }) => {
         )}
       </Form>
       <p>
-        Something wrong with this puzzle? Create an issue on{" "}
         <a
           href={`https://github.com/EmilienD/what-s-this-uwu/issues/new?title=problem%20with%20${encodeURIComponent(
             currentPuzzle.parent.relativePath
           )}`}
         >
-          github
+          Something wrong with this puzzle?
         </a>
-        .
       </p>
     </Layout>
   )
