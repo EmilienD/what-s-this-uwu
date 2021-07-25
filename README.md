@@ -1,3 +1,5 @@
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=eae6c8ea40ea&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+
 # What's this? UωU
 
 Every object-oriented Javascript developer's favourite game, guessing what "this" is in the current context.
