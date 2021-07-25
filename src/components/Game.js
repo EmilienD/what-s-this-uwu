@@ -6,6 +6,8 @@ import Answers from "../components/Answers"
 import Question from "../components/Question"
 import Score from "../components/Score"
 import anotherOne from "../media/AnotherShortOne.mp3"
+import baka from "../media/baka.mp3"
+import UwU from "../media/UwU.mp3"
 
 const Game = ({
   showResult,
@@ -47,8 +49,9 @@ const Game = ({
           e.preventDefault()
           storeAnswers({
             ...storedAnswers,
-            [puzzleId]: { score: answeredCorrectly ? 1 : -1, values },
+            [puzzleId]: { score: answeredCorrectly ? 1 : 0, values },
           })
+          new Audio(answeredCorrectly ? UwU : baka).play()
           setShowResult(true)
         }}
       >
@@ -58,10 +61,14 @@ const Game = ({
           puzzleId={puzzleId}
         />
         {showResult ? (
-          <Link className="button main" to={`?puzzle=${nextPuzzleId}`} onPointerDown={() => {
-            const sample = new Audio(anotherOne)
-            sample.play()
-          }}>
+          <Link
+            className="button main"
+            to={`?puzzle=${nextPuzzleId}`}
+            onPointerDown={() => {
+              const sample = new Audio(anotherOne)
+              sample.play()
+            }}
+          >
             Another one
           </Link>
         ) : (
