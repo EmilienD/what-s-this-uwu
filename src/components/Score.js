@@ -13,14 +13,18 @@ const Score = ({ answers, questions }) => {
           width: "4em",
           height: "4em",
           textAlign: "center",
-          lineHeight: "4em",
           borderRadius: "100%",
           backgroundColor: "var(--yellow)",
           transform: "rotate(25deg)",
           color: "var(--black)",
           marginLeft: "auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
+        <span style={{ fontSize: "0.5em", lineHeight: "0.5em" }}>score:</span>
         {score} / {max}
       </div>
     </div>
