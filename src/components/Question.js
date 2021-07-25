@@ -24,7 +24,11 @@ const Question = ({ question, answered, answeredCorrectly }) => {
       <SyntaxHighlighter
         style={customPojoaque}
         showLineNumbers
-        lineNumberStyle={{ paddingRight: "2em" }}
+        lineNumberStyle={{
+          paddingRight: "2em",
+          minWidth: "1.2em",
+          boxSizing: "content-box",
+        }}
       >
         {question}
       </SyntaxHighlighter>
