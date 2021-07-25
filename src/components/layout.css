@@ -640,16 +640,23 @@ ul {
 .answerContainer {
   padding: 0.5em 0 0.2em;
 }
-.answerContainer input + span {
+.answerContainer input + span,
+span.help {
   border-bottom: 3px solid transparent;
 }
-.answerContainer.error input + span {
+.answerContainer.error input + span,
+span.help-missed {
   border-color: lightskyblue;
+  font-style: italic;
 }
-.answerContainer.error.isSelected input + span {
+.answerContainer.error.isSelected input + span,
+span.help-error {
   border-color: red;
+  font-style: normal;
+  text-decoration: line-through;
 }
-.answerContainer.correct.isSelected input + span {
+.answerContainer.correct.isSelected input + span,
+span.help-correct {
   border-color: limegreen;
 }
 .answerContainer.correct {
@@ -675,4 +682,22 @@ ul {
 }
 .button.main:disabled {
   opacity: 0.5;
+}
+
+.help-button {
+  margin-left: 2em;
+  padding: 0;
+  color: lightgray;
+  background-color: transparent;
+  border: none;
+  font-style: italic;
+}
+
+.about-list details {
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  padding: 1em 2em;
+}
+.about-list summary {
+  font-weight: bold;
 }
