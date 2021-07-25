@@ -36,25 +36,44 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer style={{}}>
-          <a href="https://www.digitalocean.com/?refcode=eae6c8ea40ea&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge">
+        <hr />
+        <footer
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gridTemplateRows: "auto auto auto",
+            paddingTop: "2em",
+          }}
+        >
+          <a
+            style={{ gridRowStart: 1, gridRowEnd: 3 }}
+            href="https://www.digitalocean.com/?refcode=eae6c8ea40ea&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"
+          >
             <img
               src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg"
               alt="DigitalOcean Referral Badge"
             />
           </a>
-          <br />
-          Original moe image by{" "}
-          <a href="https://pixabay.com/users/akane-k-8075952/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3793863">
-            Akane-K
-          </a>{" "}
-          from{" "}
-          <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3793863">
-            Pixabay
-          </a>
-          <br />
+          <span>
+            Original moe image by{" "}
+            <a href="https://pixabay.com/users/akane-k-8075952/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3793863">
+              Akane-K
+            </a>{" "}
+            from{" "}
+            <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3793863">
+              Pixabay
+            </a>
+          </span>
           <Link to="/about">About this page</Link>
-          <span style={{ float: "right" }}>
+          <span
+            style={{
+              float: "right",
+              gridColumnStart: 1,
+              gridColumnEnd: 3,
+              textAlign: "center",
+              paddingTop: "1em",
+            }}
+          >
             © {new Date().getFullYear()}, Built with
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
